@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        #header{
+            width: 1000px;
+            height: 80px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        #header div img{
+            margin: 8px 50px 0 30px;
+            float: left;
+        }
+        #header div h1{
+            color: #ce3e26;
+            font-size: 40px;
+            margin: 16px 0 0 0;
+            float: left;
+        }
+        #nav{
+            width: 1000px;
+            height: 50px;
+            margin: 0 auto;
+            background-image: url(images/新闻首页背景.jpg);
+        }
+        #nav ul{
+            width: 1000px;
+            height: 50px;
+            /*margin: 0 0 0 20px;*/
+        }
+        #nav ul li{
+            list-style-type: none;
+            float: left;
+            width: 120px;
+            text-align: center;
+            line-height: 49px;
+        }
+        #nav ul li a{
+            font-size: 20px;
+            color: #bdbdbd;
+            text-decoration: none;
+        }
+        #nav ul li a:hover{
+            color: #fff;
+        }
+        #nav ul li:hover{
+            background-color: rgba(0,0,0,0.8);
+        }
+        #white{
+            width: 1000px;
+            height: 20px;
+            background-color: #fff;
+            margin: 0 auto;
+        }
+        #main{
+            width: 1000px;
+            height: 667px;
+            margin: 0 auto;
+            background-image: url(images/登录背景副本.jpg);
+        }
+        #right{
+            width: 500px;
+            height: 400px;
+            color: #0037d4;
+            float: right;
+        }
+        table{
+            width: 400px;
+            height: 450px;
+            margin: 100px 0 0 0;
+            background-color: #fff;
+        }
+        table tr td{
+            font-size: 16px;
+            float: left;
+            margin: 20px 20px 0 20px;
+        }
+        .code {
+            background-image:url(111.jpg);
+            font-family:Arial,宋体;
+            font-style:italic;
+            color:green;
+            border:0;
+            padding:2px 3px;
+            letter-spacing:3px;
+            font-weight:bolder;
+        }
+        .unchanged {
+            border:0;
+        }
+        #footer{
+            width: 1004px;
+            height: 120px;
+            background-color: #20232c;
+            margin: 0 auto;
+        }
+        #footer img{
+            float: left;
+            margin: -80px 0 0 -23px;
+        }
+        #footer p{
+            float: left;
+            font-size: 14px;
+            color: #888888;
+            margin: 15px 0 0 -23px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div>
+            <img src="images/logo3.jpg" alt="" />
+            <h1>. 登录</h1>
+        </div>
+    </div>
+    <div id="nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="#">电影</a></li>
+            <li><a href="#">星闻</a></li>
+            <li><a href="#">小八原创</a></li>
+            <li><a href="#">图片</a></li>
+            <li><a href="#">滚动</a></li>
+            <li><a href="#">专题</a></li>
+            <li><a href="#">VIP专属</a></li>
+        </ul>
+    </div>
+    <div id="white"></div>
+    <div id="main">
+        <div id="right">
+            <form action="" method="post">
+                <table>
+                    <tr>
+                        <td></td>
+                        <td>小八电影网登录</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>用户</td>
+                        <td><input type="text" name="" id="" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>密码</td>
+                        <td><input type="password" name="" id="" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="input1" style="width:80px"></td>
+                        <td><input type="button" id="checkCode" class="code" style="width:60px" onclick="createCode()"></td>
+                        <td><a href="###" onclick="createCode()">看不清楚</a></td>
+                        <td><input id="Button1" onclick="validate();" type="button" value="确定"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="checkbox" name="" id="" />下次自动登录</td>
+                        <td></td>
+                        <td>找回密码</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><input type="submit" value="     登录      " /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div id="white"></div>
+    <div id="footer">
+        <img src="images/logo1.png" alt="" />
+        <p>网络视听许可证0107199号 京网文[2016]6480-878号 出版物经营许可证 电影发行许可证 经营性演出许可证</p>
+        <p>企业法人营业执照 增值电信业务经营许可证 京ICP备12022675号-3 京公网安备 11010202000300号</p>
+        <p>CopyRight © 2017 电影卫星频道节目中心官方网站| 京ICP证100935</p>
+    </div>
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var code; //在全局 定义验证码
+        function createCode() {
+            code = new Array();
+            var codeLength = 4; //验证码的长度
+            var checkCode = document.getElementById("checkCode");
+            checkCode.value = "";
+            var selectChar = new Array(2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+            for (var i = 0; i < codeLength; i++) {
+                var charIndex = Math.floor(Math.random() * 32);
+                code += selectChar[charIndex];
+            }
+            if (code.length != codeLength) {
+                createCode();
+            }
+            checkCode.value = code;
+        }
+
+        function validate() {
+            var inputCode = document.getElementById("input1").value.toUpperCase();
+            if (inputCode.length <= 0) {
+                alert("请输入验证码！");
+                return false;
+            } else if (inputCode != code) {
+                alert("验证码输入错误！");
+                createCode();
+                return false;
+            } else {
+                alert("成功！");
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
