@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        } 
+        #nav{
+            width: 1380px;
+            height: 70px;
+            background-color: #20232c;
+            margin: 0 auto;
+        }
+        #nav ul{
+            width: 1380px;
+            height: 70px;
+        }
+        #nav ul li{
+            list-style-type: none;
+            float: left;
+            width: 120px;
+            text-align: center;
+            line-height: 70px;
+        }
+        #nav ul li a{
+            font-size: 20px;
+            color: #bdbdbd;
+            text-decoration: none;
+        }
+        #nav ul li a:hover{
+            color: #fff;
+        }
+        #nav  ul img{
+            margin: -105px 0 0 20px;
+        }
+        #white{
+            width: 1380px;
+            height: 35px;
+            background-color: #fff;
+            margin: 0 auto;
+        }
+        #slide{
+            width: 1380px;
+            height: 460px;
+            margin: 0 auto;
+        }
+        #img{
+            width: 1380px;
+            height: 460px;
+            overflow:hidden;
+        }
+        #arrow{
+            height: 50px;
+            position:relative;
+            top:-250px;
+            color: #fff;
+        }
+        #previous,#next{
+            width: 30px;
+            height: 50px;
+            background-color: rgba(0,0,0,0.1);
+            font-size: 40px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #previous{
+            float: left;
+        }
+        #next{
+            float: right;
+        }
+        #writing{
+            height: 66px;
+            position:relative;
+            top:-116px;
+        }
+         #writing2{
+            height: 66px;
+            position:relative;
+            top:-149px;
+        }
+        #writing h1{
+            width: 197.1px;
+            height: 33px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 13px;
+            text-align: center;
+            line-height: 45px;
+            cursor:pointer;
+            float: left;
+        }
+        #writing2 h1{
+            width: 197.1px;
+            height: 33px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 13px;
+            text-align: center;
+            line-height: 15px;
+            cursor:pointer;
+            float: left;
+        }
+        #writing h1.gray{
+            background-color: #2e323c;
+        }
+        #writing2 h1.gray{
+            background-color: #2e323c;
+        }
+        #main{
+            width: 1380px;
+            height: 560px;
+            margin: 0 auto;
+        }
+        #left{
+            width: 460px;
+            height: 560px;
+            float: left;
+            margin: 0 0 0 -30px;
+        }
+        #left h1{
+            font-size: 20px;
+        }
+         #left div img{
+            float: left;
+            margin: 15px 0 0 0;
+        }
+        #left div p{
+            line-height: 25px;
+            width: 240px;
+            float: right;
+            font-size: 14px;
+            color: #888888;
+            margin: 15px 0 0 5px;
+        }
+        #left ul{
+            margin: 35px 0 0 0;
+        }
+        #left ul li{
+            border-bottom:1px solid #ccc;
+            font-size: 16px;
+            float: left;
+            list-style-type: none;
+            line-height: 50px;
+        }
+        #left h1:hover,#left ul li:hover{
+            color: #2267ad;
+        }
+        #middle{
+            width: 460px;
+            height: 560px;
+            float: left;
+        }
+        #middle h1{
+            font-size: 18px;
+            color: #d09a63;
+            margin: 0 0 0 45px
+        }
+        #middle ul{
+            margin: 10px 0 10px 55px;
+        }
+        #middle ul li{
+            font-size: 14px;
+            line-height: 40px;
+            /*list-style-type: none;*/
+        }
+        #middle h1:hover,#middle ul li:hover{
+            color: #2267ad;
+        }
+        #right{
+            width: 460px;
+            height: 560px;
+            float: left;
+            margin: -83px 0 0 0;
+        }
+        #right div{
+            float: left;
+            margin: 0 0 20px 0;
+            
+        }
+        #right div img{
+            float: left;
+            margin: 4px 0 0 20px;
+        }
+        #right div h1{
+            width: 250px;
+            font-size: 18px;
+            float: right;
+        }
+        #right div p{
+            width: 250px;
+            float: right;
+            font-size: 14px;
+            color: #888888;
+            line-height: 25px;
+        }
+        #right div h1:hover{
+            color: #2267ad;
+        }
+        #footer{
+            width: 1380px;
+            height: 120px;
+            background-color: #20232c;
+            margin: 0 auto;
+        }
+        #footer img{
+            float: left;
+            margin: -80px 0 0 20px;
+        }
+        #footer p{
+            float: left;
+            font-size: 14px;
+            color: #888888;
+            margin: 15px 0 0 30px;
+        }
+        /*#footer p:hover{
+            color: #2267ad;
+        }*/
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <ul>
+            <img src="images/logo1.png" alt="" />
+            <li><a href="index.html">首页</a></li>
+            <li><a href="小八电影网新闻页面.html">新闻</a></li>
+            <li><a href="#">评论</a></li>
+            <li><a href="#">独家栏目</a></li>
+            <li><a href="#">大片</a></li>
+            <li><a href="#">VIP影院</a></li>
+            <li><a href="#">资料馆</a></li>
+            <li><a href="登录界面.html">登录</a></li>
+        </ul>
+    </div>
+    <div id="white"></div>
+    <div id="slide">
+        <div id="img">
+            <img src="images/电影1.jpg" alt="" />
+            <img src="images/电影2.jpg" alt="" />
+            <img src="images/电影3.jpg" alt="" />
+            <img src="images/电影4.jpg" alt="" />
+            <img src="images/电影5.jpg" alt="" />
+            <img src="images/电影6.jpg" alt="" />
+            <img src="images/电影7.jpg" alt="" />
+        </div>
+        <div id="arrow">
+            <div id="previous"><</div>
+            <div id="next">></div>
+        </div>
+        <div id="writing">
+            <h1 class="gray">《来电狂响》</h1>
+            <h1>《小猪佩奇过大年》</h1>
+            <h1>佳片有约</h1>
+            <h1>《地球最后的夜晚》</h1>
+            <h1>周游电影</h1>
+            <h1>西虹市首富</h1>
+            <h1>猛虫过江</h1>
+        </div>
+        <div id="writing2">
+            <h1 class="gray">对话乔杉&霍思燕</h1>
+            <h1>电影诞生记</h1>
+            <h1>《造物弄人》影评</h1>
+            <h1>“一吻跨年”错了吗？</h1>
+            <h1>2018华语十佳大盘点</h1>
+            <h1>开心麻花特笑大片</h1>
+            <h1>小沈阳闯台湾黑帮</h1>
+        </div>
+    </div>
+    <div id="main">
+        <div id="left">
+            <img src="images/要闻.jpg" alt="" />
+            <h1>习近平：历史研究是一切社会科学基础</h1>
+            <div>
+                <img src="images/要闻1.jpg" alt="" />
+                <p>中国社会科学院中国历史研究院3日在京成立。中共中央总书记、国家主席、中央军委主席习近平发来贺信，代表党中央表示热烈的祝贺，向全国广大历史研究工作者致以诚挚的问…</p>
+                <p>2019-01-04</p>
+            </div>
+                <ul>
+                    <li>热点 | 黄坤明：守正创新做好新形势下宣传思想工作</li>
+                    <li>焦点 | 光明日报：国产电影强势崛起竞争力不断增强</li>
+                    <li>焦点 | 央视网：感受习主席六次新年贺词里的改革开放</li>
+                    <li>焦点 | 人民日报：中国电影发展趋势呈现健康发展新姿态</li>
+                    <li>焦点 | 纪念改开40周年：继往开来再创电影专资新局面</li>
+                </ul>
+        </div>
+        <div id="middle">
+            <img src="images/快讯.jpg" alt="" />
+            <h1>电影《“大”人物》空降警校 现场齐吼“专治不服</h1>
+            <ul>
+                <li>《四个春天》暖心公映 巩俐赵薇陈坤周迅为何被它感动？</li>
+                <li>《廉政风云》组豪华拜年团 刘青云打趣“渣渣辉”成表情包</li>
+                <li>《家和万事惊》曝"撕碎现实"特辑 揭开扎心真相关怀小人物</li>
+            </ul>
+            <h1>邓超宣布《银河补习班》杀青 俞白眉讲述父子亲情</h1>
+            <ul>
+                <li>动画电影《白蛇:缘起》首映获赞 百场点映今日全国进行中</li>
+                <li>陈坤晒长发照曝新片杀青 《侍神令》改编游戏《阴阳师》</li>
+                <li>韩寒拍《飞驰人生》传授变帅秘笈 揭露沈腾颜值巅峰的秘密</li>
+            </ul>
+            <h1>推进了!新版《蝙蝠侠》或许将于2019年11月开拍</h1>
+            <ul>
+                <li>《德鲁大叔》终极预告 大鲨鱼奥尼尔隔空喊话科比传球</li>
+                <li>《小飞象》曝角色海报 绿娃亮相“蒂姆·波顿”风格浓郁</li>
+                <li>制片人工会奖提名公布 《绿皮书》等颁奖季热门影片入围</li>
+            </ul>
+        </div>
+        <div id="right">
+            <img src="images/深度.jpg" alt="" />
+            <div>
+                <img src="images/深度1.jpg" alt="" />
+                <h1>毕赣，走下神坛了吗？</h1>
+                <p>毕赣说，拍《地球最后的夜晚》三年里，自己没有了记忆。他所有的记忆都在片场，变成了一个制造记忆的人。</p>
+                <img src="images/线2.jpg" alt="" />
+            </div>
+            <div>
+                <img src="images/深度2.jpg" alt="" />
+                <h1>马丽：不要撕我这些标签！</h1>
+                <p>在新片《来电狂响》里，马丽扮演的韩笑仍然是一位外表强悍的女性，只不过这回她不搞笑了，更少了招牌的魔性笑...</p>
+                <img src="images/线2.jpg" alt="" />
+            </div>
+            <div>
+                <img src="images/深度3.jpg" alt="" />
+            </div>
+        </div>
+    </div>
+    <div id="white"></div>
+    <div id="footer">
+        <img src="images/logo1.png" alt="" />
+        <p>网络视听许可证0107199号 京网文[2016]6480-878号 出版物经营许可证 电影发行许可证 经营性演出许可证</p>
+        <p>企业法人营业执照 增值电信业务经营许可证 京ICP备12022675号-3 京公网安备 11010202000300号</p>
+        <p>CopyRight © 2017 电影卫星频道节目中心官方网站| 京ICP证100935</p>
+    </div>
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var n=0;//记录当前图片序号
+        function slideImg(){
+            n++;
+            if(n>$("#writing h1").length-1){
+                n=0;
+            } 
+            $("#img img").hide();//隐藏所有图片
+            $("#img img").eq(n).fadeIn(300);//显示索引图片
+            $("#writing h1").removeClass("gray");
+            $("#writing2 h1").removeClass("gray");
+            $("#writing h1").eq(n).addClass("gray");//索引值加类
+            $("#writing2 h1").eq(n).addClass("gray");//索引值加类
+        }
+        var interval=setInterval(slideImg,10000);//10秒自动翻页
+        $(document).ready(function() {
+            $("#writing h1").mouseover(function(event) {
+               n=$("#writing h1").index(this);//获取索引值
+               $("#img img").hide();//隐藏所有图片
+               $("#img img").eq(n).fadeIn(300);//显示索引图片
+               $("#writing h1").removeClass("gray");
+               $("#writing2 h1").removeClass("gray");
+               $("#writing h1").eq(n).addClass("gray");//索引值加类
+               $("#writing2 h1").eq(n).addClass("gray");//索引值加类
+            });
+            $("#writing2 h1").mouseover(function(event) {
+               n=$("#writing2 h1").index(this);//获取索引值
+               $("#img img").hide();//隐藏所有图片
+               $("#img img").eq(n).fadeIn(300);//显示索引图片
+               $("#writing h1").removeClass("gray");
+               $("#writing2 h1").removeClass("gray");
+               $("#writing h1").eq(n).addClass("gray");//索引值加类
+               $("#writing2 h1").eq(n).addClass("gray");//索引值加类
+            });
+            //点击左箭头图片切换
+            $("#previous").click(function(event) {
+               n--;
+               if(n<0){
+                    n=$("#writing h1").length-1;
+               } 
+               $("#img img").hide();//隐藏所有图片
+               $("#img img").eq(n).fadeIn(300);//显示索引图片
+               $("#writing h1").removeClass("gray");
+               $("#writing2 h1").removeClass("gray");
+               $("#writing h1").eq(n).addClass("gray");//索引值加类
+               $("#writing2 h1").eq(n).addClass("gray");//索引值加类
+            });
+            $("#next").click(function(event) {
+               n++;
+               if(n>$("#writing h1").length-1){
+                    n=0;
+               } 
+               $("#img img").hide();//隐藏所有图片
+               $("#img img").eq(n).fadeIn(300);//显示索引图片
+               $("#writing h1").removeClass("gray");
+               $("#writing2 h1").removeClass("gray");
+               $("#writing h1").eq(n).addClass("gray");//索引值加类
+               $("#writing2 h1").eq(n).addClass("gray");//索引值加类
+            });
+        });
+    </script>
+</body>
+</html>
